@@ -1,0 +1,55 @@
+body { 
+    background-color: #161616;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    background-color: #161616;
+    font-size: 1.35rem;
+}
+
+hr {
+    margin-top: 20px;
+    border: none;
+    height: 3px;
+    background-color: white;
+}
+
+.navbar a {
+    margin-left: 60px;
+}
+
+header {
+  text-align: center;
+}
+
+header a {
+    position: relative; /* Адаптировать позже, чтобы было видно лого через тел */
+    left: -200px;
+}
+
+.banner {
+    background-image: url("https://static-cse.canva.com/blob/787332/vk1941.29a3bc04.avif"); /* адаптировать */
+    background-size: cover;
+    background-position: center center;
+    color: white; /* придумать позже цвет  */
+    text-align: center;
+    padding: 170px 0;
+}
