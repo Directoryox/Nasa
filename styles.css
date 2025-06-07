@@ -2,7 +2,7 @@ body {
     background-color: #161616;
     padding: 0;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
 }
 
@@ -46,10 +46,126 @@ header a {
 }
 
 .banner {
-    background-image: url("https://static-cse.canva.com/blob/787332/vk1941.29a3bc04.avif"); /* адаптировать */
+    background-image:
+        linear-gradient(0deg, black, transparent 70%),
+        linear-gradient(-45deg, black, transparent 60%),
+        url("https://static-cse.canva.com/blob/787332/vk1941.29a3bc04.avif"); /* адаптировать */
     background-size: cover;
     background-position: center center;
     color: white; /* придумать позже цвет  */
     text-align: center;
     padding: 170px 0;
+}
+
+/*.plate {*/
+/*    margin-top: 0;*/
+/*    background: linear-gradient(180deg, black, transparent);*/
+/*    padding: 120px 0;*/
+/*}*/
+
+#app {
+    background: linear-gradient(45deg, #0b0b0b, #121212 70%);
+    border-radius: 40px;
+    min-height: 800px;
+    width: 95%;
+    margin-top: 5%;
+    margin-inline: 2.5%;
+
+    color: #b1b1b1;
+    font-weight: lighter;
+}
+
+#app h2 {
+    text-align: center;
+    padding-top: 40px;
+}
+
+#app hr {
+    background-color: #161616;
+    padding: 20px;
+    margin-bottom: 60px;
+}
+
+.astra-photo-of-day {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+.image-card {
+    transition: transform ease-in-out 0.4s;
+    background-size: 400px 500px;
+    outline: 2px solid #161616;
+    outline-offset: 10px;
+    border-radius: 25px;
+    height: 500px;
+    width: 400px;
+    margin-inline: 20px;
+    float: left;
+}
+.image-card:hover {
+    transform: scale(1.02) rotate3d(0, 1, 0.05, 20deg);
+}
+
+.icon-cover {
+    display: flex;
+    background-color: #0b0b0b;
+    box-shadow: rgba(11, 11, 11, 0.84) 10px 10px 20px ;
+    width: 110px;
+    height: 110px;
+    border-top-left-radius: 25px;
+    font-size: 70px;
+    color: rgba(195, 195, 195, 0.73);
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    left: 290px;
+    top: 390px;
+}
+.fa-star {
+    transition: transform ease-out 0.2s;
+}
+.fa-star:hover {
+    transform: scale(1.1) rotateZ(20deg);
+}
+.fa-star:active {
+    transform: scale(0.9) rotateZ(-20deg);
+}
+
+.information {
+    position: relative;
+    bottom: 40px;
+    overflow: hidden;
+}
+.full-info {
+    position: relative;
+    bottom: 120px;
+    width: 97%;
+}
+p {
+    width: 660px;
+    text-wrap: wrap;
+    list-style-type: none;
+    font-size: 32px;
+    font-weight: bold;
+
+    color: #8c8c8c;
+    line-height: 1.6;
+}
+
+.favorites {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+    padding: 0 40px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
