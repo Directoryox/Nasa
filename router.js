@@ -2,6 +2,7 @@ import {homePage} from "./pages/home.js";
 import {aPlanetOFDPage} from "./pages/apod.js";
 import {favoritesPage} from "./pages/favorites.js";
 import {aboutPage} from "./pages/about.js";
+import {asteroidsPage} from "./pages/asteroids.js";
 
 const app = document.getElementById('app');
 
@@ -15,7 +16,8 @@ export function router() {
         case 'apod': aPlanetOFDPage(app); break;
         case 'favorites': favoritesPage(app); break;
         case 'about': aboutPage(app); break;
-        default: app.innerHTML = `<h2>Error 404. Page not found</h2>>`; break;
+        case 'asteroids': asteroidsPage(app); break;
+        default: app.innerHTML = `<h2>Error 404. Page not found</h2>`; break;
     }
 
     app.style.transition = ""; // Это простое плавное затухание. Чуть позже сделаю другое.

@@ -20,11 +20,20 @@
                 <a href="#/favorites">Избранное</a>
                 <a href="#/about">О проекте</a>
             </nav>
+            
+            <ul class="nav-list_nav">
+                <li class="dropdown">
+                    <a href="#" class="menu-button">Страницы<i class="fa-solid fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/asteroids">Астероиды</a></li>
+                    </ul>
+                </li>
+            </ul>
 
             <!-- Написать переключатель на темную тематику сайта или белую  -->
             <!-- Dropdown для смены языка сайта -->
         </div>
-        <hr>
+        <!-- <hr> --> <!-- я не понял почему блок с ней вылетает хотя такого не было -->
 
         <header class="banner">
             <h1>Добро пожаловать на наш сайт!</h1>
@@ -40,6 +49,7 @@
         <div id="app"></div>
     </main>
 
+    <script src="js/dropdown.js"></script>
     <script type="module" src="app.js"></script>
 </body>
 </html>
