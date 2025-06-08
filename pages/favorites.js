@@ -30,6 +30,4 @@ export async function favoritesPage(app) {
         <div class="favorites">К сожалению у вас нет избранных фото</div>
         `
     }
-
-
 }
