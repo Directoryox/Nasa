@@ -187,6 +187,7 @@ ul {
 .dropdown {
     position: relative;
     margin-top: 20px;
+    left: 50px;
 }
 
 .fa-solid {
@@ -202,9 +203,7 @@ ul {
     z-index: 10;
     width: 140px;
     height: 230px;
-    left: 60px;
     margin-top: 10px;
-
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
 }
@@ -220,4 +219,40 @@ ul {
 
 .dropdown-menu li { 
     margin-top: 15px;
+}
+
+.center_bth {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.center_bth button {
+    padding: 10px 20px;
+    margin-left: 20px;
+    background-color: #545B62;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+}
+
+#list { 
+    padding: 25px;
+    margin-top: -20px;
+}
+
+#list li {
+    border: 1px solid #3E3E3E;
+    border-radius: 20px;
+    padding: 50px;
+    margin-top: 20px;
+}
+
+.menu-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.25rem;
 }
