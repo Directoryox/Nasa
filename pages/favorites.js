@@ -4,6 +4,7 @@ import {removeFavPhoto} from "../storage/favorites.js";
 export async function favoritesPage(app) {
     app.innerHTML = `
     <h2>Ваши избранные</h2>
+    <hr>
     <p>Идёт загрузка...</p>
     `
     const data = await getFavorites();
@@ -17,16 +18,17 @@ export async function favoritesPage(app) {
         }).join('');
         app.innerHTML = `
     <h2>Ваши избранные</h2>
+    <hr>
     <div class="favorites">${favorites}</div>
     `
 
-        const favButtons = document.getElementsByClassName('fa-star')
-        Array.from(favButtons).forEach((btn, index) => {
-            btn.onclick = () => removeFavPhoto(data[index].url, data[index].title);
+        document.querySelectorAll('.fa-star').forEach((btn, index) => {
+            btn.onclick = () => removeFavPhoto(data[index].url, data[index].title, index);
         })
     } else {
         app.innerHTML = `
         <h2>Ваши избранные</h2>
+    <hr>
         <div class="favorites">К сожалению у вас нет избранных фото</div>
         `
     }

@@ -1,4 +1,4 @@
-export function aboutPage(app) {
+export function cosmicWeatherPage(app) {
     app.innerHTML = `
     <h2>Это проект о космосе</h2>
     <hr>

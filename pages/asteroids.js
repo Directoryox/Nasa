@@ -47,7 +47,7 @@ function render(listElement, data) {
         const item = data[i];
         const min = item.estimated_diameter.meters.estimated_diameter_min.toFixed(1);
         const max = item.estimated_diameter.meters.estimated_diameter_max.toFixed(1);
-        const date = item.discovery_date || "неизвестно";
+        const date = item.orbital_data.first_observation_date || "неизвестно";
 
         listElement.innerHTML += `
         <li>
@@ -71,7 +71,7 @@ function sortSize(data) {
 function filterDate(data) {
     const result = [];
     for (let i = 0; i < data.length; i++) {
-        if (data[i].discovery_date) {
+        if (data[i].orbital_data.first_observation_date) {
             result.push(data[i]);
         }
     }
@@ -82,11 +82,11 @@ function sortDate(data) {
     const result = [...data];
     result.sort((a, b) => {
 
-        if (b.discovery_date > a.discovery_date) {
+        if (b.orbital_data.first_observation_date > a.orbital_data.first_observation_date) {
             return 1;
         }
 
-        if (b.discovery_date < a.discovery_date) {
+        if (b.orbital_data.first_observation_date < a.orbital_data.first_observation_date) {
             return -1;
         }
         return 0;

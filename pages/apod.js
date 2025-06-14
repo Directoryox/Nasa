@@ -1,8 +1,11 @@
 import {aPOD} from "../services/nasa.js";
 import {addFavPhoto} from "../storage/favorites.js";
+import {getFavorites} from "../storage/favorites.js";
+import {removeFavPhoto} from "../storage/favorites.js";
 
 export async function aPlanetOFDPage(app) {
     const data = await aPOD();
+    const favCheck = await getFavorites();
     app.innerHTML = `
     <h2>Просмотр космического фото дня</h2>
     <hr>
@@ -13,11 +16,17 @@ export async function aPlanetOFDPage(app) {
         </div>
         <div class="information">
             <p>${data.title} (${data.date})</p>
-            <p>${data.explanation.slice(0, 340)}-</p>
+            <p>${data.explanation.slice(0, 370)}-</p>
         </div>
-            <p class="full-info">${data.explanation.slice(340)}</p>
+            <p class="full-info">${data.explanation.slice(370)}</p>
     </div>
     `
-    console.log(data);
-    document.getElementsByClassName('fa-star')[0].onclick = () => addFavPhoto(data.url, data.title);
+
+    const addFavBtn = document.getElementsByClassName('fa-star')[0];
+    addFavBtn.onclick = () => addFavPhoto(data.url, data.title, 0);
+    if (favCheck.some(fav => fav.url === data.url)) {
+        addFavBtn.classList.remove('fa-regular');
+        addFavBtn.classList.add('fa-solid');
+        addFavBtn.onclick = () => removeFavPhoto(data.url, data.title, 0);
+    }
 }
