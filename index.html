@@ -8,19 +8,18 @@
     <script src="https://kit.fontawesome.com/ffb2eb8222.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-    <div class="mask">
-        <img class="loader" src="https://github.githubassets.com/assets/mona-loading-dark-7701a7b97370.gif" alt="">
-        <div class="text">
-            <p>Страница загружается</p>
-            <p>Пожалуйста, подождите</p>
-        </div>
+<div class="mask">
+    <img class="loader" src="https://github.githubassets.com/assets/mona-loading-dark-7701a7b97370.gif" alt="">
+    <div class="text">
+        <p>Страница загружается</p>
+        <p>Пожалуйста, подождите</p>
     </div>
+</div>
 
-    <div class="container">
+<div class="container">
         <div class="navbar">
             <header>
-                <a href="#/home">Space Explorer</a>
+                <a class="logo" href="#/home">Space Explorer</a>
             </header>
 
             <nav>
@@ -28,16 +27,18 @@
                 <a href="#/apod">Фото дня</a>
                 <a href="#/favorites">Избранное</a>
                 <a href="#/about">О проекте</a>
-            </nav>
             
-            <ul class="nav-list_nav">
-                <li class="dropdown">
-                    <button class="menu-button">Страницы<i class="fa-solid fa-caret-down"></i></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#/asteroids">Астероиды</a></li>
-                    </ul>
-                </li>
-            </ul>
+                <ul class="nav-list_nav">
+                    <li class="dropdown">
+                        <button class="menu-button">Страницы<i class="fa-solid fa-caret-down"></i></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#/asteroids">Астероиды<i class="fa-solid fa-angle-right"></i></a></li>
+                            <li><a href="#/exoplanets">Экзопланеты<i class="fa-solid fa-angle-right"></i></a></li>
+                            <li><a href="#/cosmicWeather">События<i class="fa-solid fa-angle-right"></i></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
 
             <!-- Написать переключатель на темную тематику сайта или белую  -->
             <!-- Dropdown для смены языка сайта -->
@@ -48,16 +49,16 @@
             <h1>Добро пожаловать на наш сайт!</h1>
             <h1>Приятно познакомится!</h1>
         </header>
-    
-
-        <!-- Остальную часть Даня пишет, мне оставь только
-        1. Dropdown 
-        2. Переключатель (но если хочешь сильно сделать переключатель, то можешь написать его) 
-        3. Остальное поговрим в тг -->
-        <main>
-            <div id="app"></div>
-        </main>
     </div>
+
+    <!-- Остальную часть Даня пишет, мне оставь только
+    1. Dropdown 
+    2. Переключатель (но если хочешь сильно сделать переключатель, то можешь написать его) 
+    3. Остальное поговрим в тг -->
+    <main>
+        <div id="app"></div>
+    </main>
+
     <script src="js/dropdown.js"></script>
     <script src="js/lazyLoading.js"></script>
     <script type="module" src="app.js"></script>
