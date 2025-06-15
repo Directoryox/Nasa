@@ -268,6 +268,7 @@ ul {
 
 .fa-solid {
     margin-left: 10px;
+    transition: transform 0.5s ease;
 }
 
 .nav-list_nav {
@@ -638,10 +639,12 @@ ul {
     align-items: center;
     justify-content: center;
 }
+
 .loader {
     width: 125px;
     height: 125px;
 }
+
 .mask p {
     display: flex;
     align-items: center;
@@ -649,9 +652,110 @@ ul {
     margin: 0;
     font-size: 1.5rem;
 }
+
 .text {
     margin-top: 20px;
 }
+
 .mask.hide {
     opacity: 0;
+}
+
+/* строго адаптировать календарь */
+
+.inputDiv { 
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+}
+
+#startDate, #endDate, #selectType {
+    margin-left: 30px;
+    padding: 10px 14px;
+    border: 1.5px solid #4C4C4C;
+    border-radius: 8px;
+    background-color: #181818;
+    color: #FEFEFE;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+#showWeather {
+    margin-left: 30px;
+    background-color: #4C4C4C;
+    color: #FEFEFE;
+    font-size: 0.7em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 95px;
+}
+
+.flatpickr-day,
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.today,
+.flatpickr-day:hover {
+    color: #FFFFFF !important;
+} 
+
+.dayContainer, .flatpickr-current-month, .flatpickr-month, .flatpickr-weekday, .flatpickr-weekdays {
+    background-color: #181818 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+}
+
+.flatpickr-calendar {
+    border: none !important;
+}
+
+.flatpickr-next-month, .flatpickr-prev-month {
+    fill: white !important;
+}
+
+.flatpickr-monthDropdown-month {
+    background-color: black !important;
+}
+
+.flatpickr-current-month .numInputWrapper span.arrowUp:after {
+    border-bottom-color: #FFFFFF !important;
+}
+
+.flatpickr-current-month .numInputWrapper span.arrowDown:after {
+    border-top-color: #FFFFFF !important;
+}
+
+.flatpickr-day:hover {
+    background: none !important;
+}
+
+.flatpickr-calendar {
+    box-shadow: none !important;
+}
+
+#selectType option {
+    margin-top: 50px !important;
+}
+
+#results, .event {
+    margin-top: 100px;
+    text-align: center;
+    display: grid;
+    justify-self: center;
+}
+
+.event {
+    background-color: #161616;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 18px;
+    width: 80%;
+    color: white;
+}
+
+.text_js {
+    width: 50%;
+    max-width: 50%;
+    margin: 0 auto;
 }
