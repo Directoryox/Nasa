@@ -4,6 +4,7 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
+    overflow-x: hidden;
 }
 
 * {
@@ -51,13 +52,16 @@ a:hover {
 }
 
 @media (max-width: 900px) {
+    .exo-planets {
+        justify-content: center;
+    }
     .exo-planet {
         flex-direction: column;
-        width: 180px !important;
-        height: 180px !important;
+        width: 300px !important;
+        height: 300px !important;
     }
     .planet-info {
-        width: 180px !important;
+        width: 300px !important;
         height: 260px !important;
     }
 }
@@ -68,12 +72,15 @@ a:hover {
 }
 @media (max-width: 1010px) {
     .star-information {
-        flex-wrap: wrap;
+        justify-content: left !important;
         flex-direction: row;
-        gap: 0;
+        flex-wrap: wrap;
+        gap: 20px !important;
+        margin-left: 0;
+        width: 500px !important;
     }
     .astra-system.active .astra-cube {
-        transform: rotateY(-1deg) rotateX(24deg) rotateZ(0deg) translateY(200%) translateX(-40%) !important;
+        transform: rotateY(-1deg) rotateX(24deg) rotateZ(0deg) translateY(200%) translateX(-50%) !important;
     }
     .astra-system.active h2 {
         transform: translateY(120%);

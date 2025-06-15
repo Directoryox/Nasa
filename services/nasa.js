@@ -16,3 +16,8 @@ export const loadExoPlanetsData = (async () => {
     const text = await res.text();
     return transformCSV(text);
 })
+
+export async function getCosmicWeatherData(startDate, endDate, type) {
+    const response = await fetch(`https://api.nasa.gov/DONKI/${type}?startDate=${startDate}&endDate=${endDate}&api_key=1AZPGujj69PHctLSrLCCt5B4avSDrMmHGDy2apBY`);
+    return await response.json();
+}
