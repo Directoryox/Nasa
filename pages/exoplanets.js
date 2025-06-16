@@ -1,5 +1,5 @@
-import {loadExoPlanetsData} from "/services/nasa.js";
-import {debounce} from "/js/operations.js"
+import {loadExoPlanetsData} from "../services/nasa.js";
+import {debounce} from "../js/operations.js"
 
 export async function exoplanetsPage(app) {
     app.innerHTML = `
