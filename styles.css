@@ -65,6 +65,36 @@ a:hover {
     top: 0;
 }
 
+nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 6px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    height: 2px;
+    background-color: white;
+    width: 90%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
 .logo {
     position: static;
 }
@@ -159,7 +189,7 @@ header a {
     min-height: 800px;
     width: 95%;
     max-width: 95vw;
-    margin-top: 8%;
+    margin-top: 4%;
     margin-left: 2.5%;
     margin-right: 2.5%;
 
@@ -822,7 +852,7 @@ ul {
 
 #selectType option {
     margin-top: 50px !important;
-    font-size: 10px;
+    font-size: 20px;
 }
 
 #results, .event {
@@ -960,5 +990,11 @@ ul {
     }
     .astra-system:not(.active) .astra-cube:not(.show) {
         transform: rotateY(226deg) rotateX(10deg) rotateZ(10deg) translateY(180%) !important;
+    }
+}
+
+@media (max-width: 1150px) {
+    #selectType option {
+        font-size: 15px;
     }
 }
