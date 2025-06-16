@@ -3,7 +3,7 @@ export function homePage(app) {
     <h2>Space Explorer</h2>
     <hr>
     <div class="text-page">
-    <p>Этот проект был создан для того, чтобы показывать космические фото дня. Для просмотра вы можете нажать кнопку ниже.</p>
+    <p>This project has been created.</p>
     <a href="#/apod"></a>
     </div>
     `

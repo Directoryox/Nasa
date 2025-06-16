@@ -9,10 +9,10 @@ export async function asteroidsPage(app) {
 
 function render_page(app) {
     app.innerHTML = `
-        <h2>Астероиды</h2>
+        <h2>Asteroids</h2>
         <div class="center_bth">
-            <button id="filter_size">Фильтр по размеру</button>
-            <button id="filter_date">Фильтр по дате</button>
+            <button id="filter_size">Filter by size</button>
+            <button id="filter_date">Filter by date</button>
         </div>
         <ul id="list"></ul>
     `;
@@ -47,7 +47,7 @@ function render(listElement, data) {
         const item = data[i];
         const min = item.estimated_diameter.meters.estimated_diameter_min.toFixed(1);
         const max = item.estimated_diameter.meters.estimated_diameter_max.toFixed(1);
-        const date = item.orbital_data.first_observation_date || "неизвестно";
+        const date = item.orbital_data.first_observation_date || "unknown";
 
         listElement.innerHTML += `
         <li>

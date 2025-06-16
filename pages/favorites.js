@@ -3,9 +3,9 @@ import {removeFavPhoto} from "../storage/favorites.js";
 
 export async function favoritesPage(app) {
     app.innerHTML = `
-    <h2>Ваши избранные</h2>
+    <h2>Your favorites</h2>
     <hr>
-    <p>Идёт загрузка...</p>
+    <p>Loading, please wait...</p>
     `
     const data = await getFavorites();
     if (data.length !== 0) {
@@ -17,7 +17,7 @@ export async function favoritesPage(app) {
         `
         }).join('');
         app.innerHTML = `
-    <h2>Ваши избранные</h2>
+    <h2>Your favorites</h2>
     <hr>
     <div class="favorites">${favorites}</div>
     `
@@ -27,9 +27,9 @@ export async function favoritesPage(app) {
         })
     } else {
         app.innerHTML = `
-        <h2>Ваши избранные</h2>
+        <h2>Your favorites</h2>
     <hr>
-        <div class="favorites">К сожалению у вас нет избранных фото</div>
+        <div class="favorites">You're don't have any favorites</div>
         `
     }
 }

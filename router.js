@@ -1,5 +1,5 @@
 import {homePage} from "./pages/home.js";
-import {aPlanetOFDPage} from "./pages/apod.js";
+import {aPhotoOFDPage} from "./pages/apod.js";
 import {favoritesPage} from "./pages/favorites.js";
 import {aboutPage} from "./pages/about.js";
 import {asteroidsPage} from "./pages/asteroids.js";
@@ -19,7 +19,7 @@ export async function router() {
     await new Promise(resolve => setTimeout(resolve, 500));
     switch (route) {
         case 'home': homePage(app); break;
-        case 'apod': await aPlanetOFDPage(app); break;
+        case 'apod': await aPhotoOFDPage(app); break;
         case 'favorites': await favoritesPage(app); break;
         case 'about': aboutPage(app); break;
         case 'asteroids': await asteroidsPage(app); break;

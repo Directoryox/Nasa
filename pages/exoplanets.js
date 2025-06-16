@@ -12,8 +12,8 @@ export async function exoplanetsPage(app) {
             <div id="astraSystemContainer"><input id="searchAstraSystem" placeholder="Input a system"><div id="buttonContainer"></div></div>
             </div>
             <div class="astra-cube-face back"></div>
-            <div class="astra-cube-face right"></div>
-            <div class="astra-cube-face left"></div>
+            <div class="astra-cube-face top"></div>
+            <div class="astra-cube-face bottom"></div>
         </div>
         <ul class="star-information"></ul>
         </div>
@@ -42,7 +42,7 @@ export async function exoplanetsPage(app) {
     loadNextSystems();
     astraSystemsContainer.addEventListener('scroll', () => {
         const {scrollTop, scrollHeight, clientHeight} = astraSystemsContainer;
-        if (scrollTop + scrollHeight >= clientHeight - 50) {
+        if (scrollTop + clientHeight >= scrollHeight - 50) {
             loadNextSystems();
         }
     });

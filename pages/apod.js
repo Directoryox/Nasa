@@ -3,11 +3,11 @@ import {addFavPhoto} from "../storage/favorites.js";
 import {getFavorites} from "../storage/favorites.js";
 import {removeFavPhoto} from "../storage/favorites.js";
 
-export async function aPlanetOFDPage(app) {
+export async function aPhotoOFDPage(app) {
     const data = await aPOD();
     const favCheck = await getFavorites();
     app.innerHTML = `
-    <h2>Просмотр космического фото дня</h2>
+    <h2>Astronomy photo of day</h2>
     <hr>
     <div class="astra-photo-of-day">
         <div class="image-card" style="background-image: url(${data.url})">

@@ -5,6 +5,9 @@ body {
     font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    -webkit-tap-highlight-color: transparent;
 }
 
 * {
@@ -13,11 +16,24 @@ body {
     font-weight: normal;
 }
 
+.container {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+::selection {
+    background-color: rgba(140, 140, 140, 0.1);
+    backdrop-filter: blur(5px);
+    color: #686868;
+}
+
 a {
     transition: text-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
     text-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
-    color: white;
+    color: #b1b1b1;
     text-decoration: none;
+    user-select: none;
 }
 
 a:hover {
@@ -29,125 +45,100 @@ a:hover {
     z-index: 3;
     position: fixed;
     width: 100%;
+    max-width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 25px;
+    padding: 25px 4%;
     height: 80px;
     background-color: rgba(22, 22, 22, 0.7);
     backdrop-filter: blur(5px);
     font-size: 1.35rem;
+    box-sizing: border-box;
 }
 
 .navbar nav {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 0;
+    top: 0;
 }
-
-@media (max-width: 600px) {
-    .navbar nav a {
-        display: none;
-    }
-}
-
-@media (max-width: 900px) {
-    .exo-planets {
-        justify-content: center;
-    }
-    .exo-planet {
-        flex-direction: column;
-        width: 300px !important;
-        height: 300px !important;
-    }
-    .planet-info {
-        width: 300px !important;
-        height: 260px !important;
-    }
-}
-@media (max-width: 1275px) {
-    p {
-        width: 90vw !important;
-    }
-}
-@media (max-width: 1010px) {
-    .star-information {
-        justify-content: left !important;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 20px !important;
-        margin-left: 0;
-        width: 500px !important;
-    }
-    .astra-system.active .astra-cube {
-        transform: rotateY(-1deg) rotateX(24deg) rotateZ(0deg) translateY(200%) translateX(-50%) !important;
-    }
-    .astra-system.active h2 {
-        transform: translateY(120%);
-    }
-}
-
-/*.navbar a::after {*/
-/*    content: '';*/
-/*    display: block;*/
-/*    transition: padding 0.5s ease-in-out;*/
-/*    background-color: #dadada;*/
-/*    width: 30px;*/
-/*    height: 15px;*/
-/*    padding: 0;*/
-/*}*/
-/*.navbar a:hover::after {*/
-/*    padding: 30px;*/
-/*}*/
 
 .logo {
-    margin-left: 160px;
+    position: static;
 }
 
 header {
     text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header a {
-    position: relative; /* Адаптировать позже, чтобы было видно лого через тел */
-    left: -200px;
+    position: relative;
+    left: 0;
+    width: 150px;
+    max-width: 150px;
 }
-
+.text-page {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
 .text-page p {
-    margin-left: 60px;
     width: 90%;
+    max-width: 90%;
 }
 
 .banner {
     background-image:
             linear-gradient(0deg, black, transparent 70%),
             linear-gradient(-45deg, black, transparent 60%),
-            url("banner.png"); /* адаптировать */
+            url("banner.png");
     background-size: cover;
     background-position: center center;
-    color: #b1b1b1; /* придумать позже цвет  */
-    text-align: center;
+    color: #8c8c8c;
+    text-align: left;
     padding-top: 140px;
     padding-bottom: 70px;
+    padding-inline: 4%;
     box-shadow: rgba(11, 11, 11, 0.66) 0 20px 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
-
-/*.plate {*/
-/*    margin-top: 0;*/
-/*    background: linear-gradient(180deg, black, transparent);*/
-/*    padding: 120px 0;*/
-/*}*/
+.banner div {
+    background: linear-gradient(90deg, rgb(44, 44, 44, 0.2) 30%, rgba(9, 9, 9, 0.2) 50%);
+    position: relative;
+    padding-left: 5%;
+    right: 10px;
+    width: 60%;
+    min-width: 300px;
+    text-wrap: wrap;
+    border-radius: 25px;
+    border-left: #555555 1px solid;
+    border-right: #2c2c2c 1px solid;
+}
 
 #app {
     background: linear-gradient(145deg, #050505, #0e0e0e 70%);
     border-radius: 20px;
     min-height: 800px;
     width: 95%;
+    max-width: 95vw;
     margin-top: 8%;
-    margin-inline: 2.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
 
     color: #8c8c8c;
+    border-top: #0f0f0f 2px solid;
     font-weight: lighter;
+    overflow-x: hidden;
 }
 
 #app h2 {
@@ -181,6 +172,7 @@ header a {
     border-radius: 25px;
     height: 500px;
     width: 400px;
+    max-width: 90vw;
     margin-inline: 20px;
     float: left;
 }
@@ -192,7 +184,7 @@ header a {
 .icon-cover {
     display: flex;
     background-color: #0b0b0b;
-    box-shadow: rgba(11, 11, 11, 0.84) 10px 10px 20px ;
+    box-shadow: rgba(11, 11, 11, 0.84) 10px 10px 20px;
     width: 110px;
     height: 110px;
     border-top-left-radius: 25px;
@@ -203,7 +195,7 @@ header a {
     align-items: center;
 
     position: relative;
-    left: 290px;
+    left: calc(100% - 110px);
     top: 390px;
 }
 .fa-star {
@@ -224,10 +216,13 @@ header a {
 .full-info {
     position: relative;
     bottom: 120px;
+    right: 10px;
     width: 90vw;
+    max-width: 90vw;
 }
 p {
-    width: 660px;
+    width: min(660px, 80vw);
+    max-width: 80vw;
     text-wrap: wrap;
     font-size: 32px;
 
@@ -243,8 +238,8 @@ p {
     align-items: flex-start;
     justify-content: center;
     width: 100%;
-    gap: 10%;
-    padding-inline: 40px;
+    gap: 5%;
+    padding-inline: 4%;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -252,8 +247,10 @@ p {
     border-inline: #161616 2px solid;
     padding-left: 20px;
     margin-left: 10px;
-    width: 420px;
-    height: 100px;
+    width: min(420px, 90vw);
+    max-width: 90vw;
+    height: auto;
+    min-height: 100px;
 }
 
 ul {
@@ -262,8 +259,6 @@ ul {
 
 .dropdown {
     position: relative;
-    margin-top: 20px;
-    left: 50px;
 }
 
 .fa-solid {
@@ -274,7 +269,7 @@ ul {
 .nav-list_nav {
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 0;
     padding: 0;
 }
 
@@ -285,10 +280,12 @@ ul {
     position: absolute;
     overflow: hidden;
     padding: 0 25px;
-    right: -100px;
+    right: -50px;
+    top: 36px;
     list-style: none;
-    z-index: 10;
-    width: 260px;
+    z-index: 100;
+    width: 240px;
+    max-width: 80vw;
     margin-top: 16px;
     border-end-start-radius: 15px;
     transition: height 1s ease, padding 0.5s ease, visibility 0.6s, opacity 0.6s;
@@ -300,8 +297,15 @@ ul {
 .dropdown.show .dropdown-menu {
     visibility: visible;
     opacity: 1;
-    height: 400px;
+    height: 440px;
     padding: 25px;
+}
+.dropdown.show button i {
+    transform: rotateZ(0deg);
+}
+.dropdown button i {
+    transition: transform ease-in-out 0.6s;
+    transform: rotateZ(180deg) translateY(-10%);
 }
 
 .dropdown-menu li a {
@@ -316,6 +320,7 @@ ul {
 
 .dropdown-menu li {
     transition: left 0.3s ease-in-out;
+    text-align: left;
     position: relative;
     padding-bottom: 20px;
     left: 0;
@@ -334,18 +339,22 @@ ul {
     display: flex;
     justify-content: center;
     justify-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 20px;
 }
 
 .center_bth button {
     transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
-    padding: 10px 50px;
-    margin-left: 20px;
+    padding: 10px 30px;
+    margin-left: 10px;
     background-color: #bcbcbc;
     color: #0e0e0e;
     font-size: 18px;
     cursor: pointer;
     border-radius: 15px;
     border: none;
+    min-width: 120px;
 }
 .center_bth button:hover {
     background-color: #e6e6e6;
@@ -363,7 +372,9 @@ ul {
 #list li {
     transition: box-shadow 1s ease-in-out, transform 0.4s ease-in-out;
     box-shadow: #000000 0 10px 10px;
-    border: 1px solid #3E3E3E;
+    border-left: 1px solid #3E3E3E;
+    border-block: 1px solid #2c2c2c;
+    border-right: 1px solid #1b1b1b;
     border-radius: 20px;
     padding: 50px;
     margin-top: 20px;
@@ -375,6 +386,8 @@ ul {
 }
 
 .menu-button {
+    position: relative;
+    bottom: 10px;
     transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
     background-color: #bcbcbc;
     padding: 10px 20px;
@@ -389,6 +402,9 @@ ul {
     background-color: transparent;
     color: #dadada;
 }
+.only-short {
+    display: none;
+}
 
 .menu-button:hover {
     background-color: #e6e6e6;
@@ -400,8 +416,10 @@ ul {
     top: -200px;
     display: flex;
     justify-content: center;
-    margin-inline: 40%;
-    width: 20%;
+    margin-inline: auto;
+    width: min(20%, 300px);
+    min-width: 200px;
+    max-width: 90vw;
     height: 800px;
     perspective: 1000px;
     perspective-origin: center;
@@ -417,9 +435,10 @@ ul {
 .astra-system.active .astra-cube {
     transform: rotateY(0deg) rotateX(19deg) rotateZ(0deg) translateY(160%);
     .front {transform: translateZ(100px); border-radius: 50%;}
-    .back {transform: rotateY(180deg) translateZ(100px); border-radius: 50%;}
-    .right {transform: rotateY(90deg) translateZ(100px); opacity: 0;}
-    .left {transform: rotateY(-90deg) translateZ(100px); opacity: 0;}
+    .back {transform: rotateY(180deg); border-radius: 50%;}
+    .top, .bottom {transition: border-radius ease-in-out 1.2s, border ease-in-out 0.5s, box-shadow ease-in-out 0.8s, width ease-in-out 1.2s, transform ease-in-out 1.2s, height ease-in-out 1.2s, opacity ease-in-out 0.1s;}
+    .top {transform: rotateX(90deg) translateZ(100px); opacity: 0;}
+    .bottom {transform: rotateX(-90deg) translateZ(100px); opacity: 0;}
 }
 .astra-system h2 {
     transition: top ease-in-out 1.2s, border ease-in-out 1s, border-radius ease-in-out 1.2s;
@@ -428,7 +447,7 @@ ul {
     position: absolute;
     text-align: center;
     font-size: 34px;
-    width: 40vw;
+    width: min(40vw, 600px);
     top: 400px;
 }
 .astra-system.active h2 {
@@ -451,15 +470,21 @@ ul {
     text-align: center;
     justify-content: center;
     font-size: 32px;
-    width: 600px;
+    width: min(600px, 90vw);
+    max-width: 90vw;
     height: 0;
-    top: 240px;
-    gap: 60px;
+    top: 180px;
+    gap: 5%;
+    flex-wrap: wrap;
 }
 .star-information li {
     border-inline: #555555 1px solid;
     border-radius: 25px;
-    padding-inline: 25px;
+    margin-inline: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+    flex: 1;
+    min-width: 160px;
 }
 .astra-system.active .star-information {
     opacity: 1;
@@ -474,12 +499,13 @@ ul {
     transition: transform ease-in-out 1.2s;
 }
 .astra-cube.show {
-    transform: translateX(-31.25vw);
+    transform: translateX(-23.75vw);
     #astraSystemContainer {pointer-events: all; height: 500px; animation: appearing 2s forwards;}
-    .front {transform: translateZ(100px); width: 78vw; height: 600px;}
-    .back {transform: rotateY(180deg) translateZ(7.81vw); width: 78vw; height: 600px;}
-    .right {transform: rotateY(90deg) translateZ(70vw); height: 600px; opacity: 0;}
-    .left {transform: rotateY(-90deg) translateZ(7.81vw); height: 600px; opacity: 0;}
+    .front {transform: translateZ(100px); width: min(78vw, 800px); max-width: 78vw; height: 600px;}
+    .back {transform: rotateY(180deg) translateZ(7.81vw); width: min(78vw, 800px); max-width: 78vw; height: 600px;}
+    .top, .bottom {transition: border-radius ease-in-out 1.2s, border ease-in-out 0.5s, box-shadow ease-in-out 0.8s, width ease-in-out 1.2s, transform ease-in-out 1.2s, height ease-in-out 1.2s, opacity ease-in-out 1.8s;}
+    .top {transform: rotateX(90deg) translateZ(100px); width: min(78vw, 800px); max-width: 78vw;}
+    .bottom {transform: rotateX(-90deg) translateZ(500px); width: min(78vw, 800px); max-width: 78vw;}
 }
 .astra-cube:not(.show) {
     transform: rotateY(226deg) rotateX(10deg) rotateZ(10deg) translateY(160%);
@@ -501,6 +527,7 @@ ul {
     row-gap: 10px;
     flex-wrap: wrap;
     overflow-y: auto;
+    max-width: 100%;
 }
 .astra-system-button {
     transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
@@ -512,6 +539,11 @@ ul {
     cursor: pointer;
     border-radius: 15px;
     border: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 80px;
+    max-width: 200px;
 }
 .astra-system-button:hover {
     background-color: rgba(230, 230, 230, 0.8);
@@ -526,11 +558,13 @@ ul {
     border: #9c9c9c 2px solid;
     border-radius: 10px;
     width: 100%;
+    max-width: 100%;
     height: 60px;
     outline: none;
     color: #8c8c8c;
     font-size: 18px;
     text-align: center;
+    box-sizing: border-box;
 }
 #searchAstraSystem::placeholder {
     color: #8c8c8c;
@@ -549,8 +583,7 @@ ul {
 }
 .front {transform: translateZ(100px);}
 .back {transform: rotateY(180deg) translateZ(100px);}
-.right {transform: rotateY(90deg) translateZ(100px); transition: border-radius ease-in-out 1.2s, border ease-in-out 0.5s, box-shadow ease-in-out 0.8s, width ease-in-out 1.2s, transform ease-in-out 1.3s, height ease-in-out 1.2s, opacity ease-in-out 1.8s;}
-.left {transform: rotateY(-90deg) translateZ(100px);}
+.top, .bottom {transition: border-radius ease-in-out 1.2s, border ease-in-out 0.5s, box-shadow ease-in-out 0.8s, width ease-in-out 1.2s, transform ease-in-out 1.2s, height ease-in-out 1.2s, opacity ease-in-out 1.8s;}
 .top {transform: rotateX(90deg) translateZ(100px);}
 .bottom {transform: rotateX(-90deg) translateZ(100px);}
 
@@ -558,7 +591,7 @@ ul {
     width: 12px;
 }
 *::-webkit-scrollbar-track{
-    background: transparent
+    background: transparent;
 }
 *::-webkit-scrollbar-thumb {
     background: #3E3E3E;
@@ -588,33 +621,36 @@ ul {
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 90%;
+    max-width: 90%;
     min-height: 1200px;
-
     margin-inline: auto;
     padding-top: 50px;
     border-radius: 25px;
     border-top: rgba(85, 85, 85, 0.5) solid 1px;
     transition: opacity 2s ease-in-out;
+    overflow-x: hidden;
 }
 .exo-planet-block {
-    width: 220px;
+    width: min(220px, 90vw);
+    max-width: 90vw;
     height: 560px;
+    margin-bottom: 20px;
 }
 .exo-planet {
     transition: border ease-in-out 0.5s, box-shadow ease-in-out 0.5s;
     background: transparent;
     border: 1px solid #555555;
     border-radius: 50%;
-    width: 220px;
-    height: 220px;
-    margin-inline: 2.25%;
+    width: min(220px, 90vw);
+    height: min(220px, 90vw);
+    margin-inline: auto;
 }
 .exo-planet-block:hover {
     .exo-planet {border: 1px solid #8c8c8c; box-shadow: #353535 0 30px 50px;}
     .planet-info {text-shadow: #404040 0 10px 20px;}
 }
 .planet-info {
-    width: 227px;
+    width: min(227px, 90vw);
     height: 300px;
     font-size: 24px;
     padding: 20px;
@@ -639,12 +675,10 @@ ul {
     align-items: center;
     justify-content: center;
 }
-
 .loader {
     width: 125px;
     height: 125px;
 }
-
 .mask p {
     display: flex;
     align-items: center;
@@ -652,43 +686,65 @@ ul {
     margin: 0;
     font-size: 1.5rem;
 }
-
 .text {
     margin-top: 20px;
 }
-
 .mask.hide {
     opacity: 0;
 }
 
-/* строго адаптировать календарь */
-
-.inputDiv { 
+.inputDiv {
     justify-content: center;
     justify-items: center;
     display: flex;
+    padding-inline: 80px ;
 }
 
 #startDate, #endDate, #selectType {
+    backdrop-filter: blur(5px);
+    border-top: #3E3E3E 1px solid;
+    border-left: #3E3E3E 1px solid;
+    border-bottom: #2e2e2e 1px solid;
+    border-right: #2e2e2e 1px solid;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 100%;
+    height: 60px;
+    outline: none;
+    color: #8c8c8c;
+    text-align: center;
+    box-sizing: border-box;
     margin-left: 30px;
     padding: 10px 14px;
-    border: 1.5px solid #4C4C4C;
-    border-radius: 8px;
-    background-color: #181818;
-    color: #FEFEFE;
+    background-color: #0e0e0e;
     font-size: 0.9em;
     cursor: pointer;
 }
 
+#startDate::placeholder, #endDate::placeholder, #selectType::placeholder {
+    color: #8c8c8c;
+    font-size: 0.9em;
+    text-align: center;
+}
+
 #showWeather {
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    padding: 10px 30px;
     margin-left: 30px;
-    background-color: #4C4C4C;
-    color: #FEFEFE;
+    background-color: #bcbcbc;
+    color: #0e0e0e;
     font-size: 0.7em;
     border: none;
-    border-radius: 8px;
+    border-radius: 15px;
     cursor: pointer;
-    width: 95px;
+    min-width: 120px;
+}
+#showWeather:hover {
+    background-color: #e6e6e6;
+}
+#showWeather:active {
+    background-color: transparent;
+    color: #dadada;
 }
 
 .flatpickr-day,
@@ -698,15 +754,15 @@ ul {
 .flatpickr-day.today,
 .flatpickr-day:hover {
     color: #FFFFFF !important;
-} 
+}
 
 .dayContainer, .flatpickr-current-month, .flatpickr-month, .flatpickr-weekday, .flatpickr-weekdays {
-    background-color: #181818 !important;
     color: #FFFFFF !important;
     border: none !important;
 }
 
 .flatpickr-calendar {
+    background-color: rgb(14, 14, 14) !important;
     border: none !important;
 }
 
@@ -732,10 +788,13 @@ ul {
 
 .flatpickr-calendar {
     box-shadow: none !important;
+    border: #161616 1px solid !important;
+    border-radius: 25px !important;
 }
 
 #selectType option {
     margin-top: 50px !important;
+    font-size: 10px;
 }
 
 #results, .event {
@@ -746,16 +805,132 @@ ul {
 }
 
 .event {
-    background-color: #161616;
+    background-color: #050505;
     padding: 20px;
-    border: 2px solid black;
+    border-top: #3E3E3E 1px solid;
+    border-left: #3E3E3E 1px solid;
+    border-bottom: #2e2e2e 1px solid;
+    border-right: #2e2e2e 1px solid;
     border-radius: 18px;
     width: 80%;
-    color: white;
+    opacity: 0;
+    text-align: left;
+    animation: appearing 1s ease-in-out forwards;
 }
 
 .text_js {
-    width: 50%;
-    max-width: 50%;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
+    line-height: 3rem;
+}
+
+@media (max-width: 400px) {
+    .star-information {
+        justify-content: left !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-wrap: wrap !important;
+        gap: 20px !important;
+        margin-left: 0;
+        width: 200px !important;
+        right: -20%;
+    }
+    .star-information li {
+        border-inline: none;
+        border-radius: 0;
+        padding-inline: 0;
+    }
+    .banner div {
+        min-width: 300px;
+        margin-left: 20px;
+    }
+    .astra-cube.show {
+        transform: translateX(-11vw) !important;
+    }
+    .astra-system.active h2 {
+        border-top: none !important;
+        top: 600px !important;
+    }
+}
+@media (max-width: 600px) {
+    .navbar nav {
+        display: none;
+    }
+    .only-short {
+        display: block;
+    }
+    #app h2 {
+        text-align: left;
+        padding-left: 45px;
+        width: 90vw
+    }
+    .inputDiv {
+        padding-left: 60px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    #showWeather {
+        margin-left: 10px;
+    }
+    #selectType {
+        position: relative;
+        width: 50% !important;
+        max-width: 50% !important;
+        right: 23% !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .exo-planets {
+        justify-content: center;
+    }
+    .exo-planet {
+        width: 200px !important;
+        height: 200px !important;
+    }
+    .planet-info {
+        position: relative;
+        width: 300px !important;
+        height: 260px !important;
+        right: 40px !important;
+    }
+    .center_bth button {
+        padding: 10px 30px !important;
+    }
+    #startDate, #endDate, #selectType {
+        margin-left: 10px;
+    }
+}
+@media (max-width: 1275px) {
+    p {
+        padding-top: 20px;
+        width: 80vw !important;
+        font-size: 24px;
+    }
+}
+@media (max-width: 1010px) {
+    .star-information {
+        justify-content: left !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px !important;
+        margin-left: 0;
+        width: 500px !important;
+    }
+    .astra-system.active .astra-cube {
+        transform: rotateY(-1deg) rotateX(23deg) rotateZ(0deg) translateY(190%) translateX(2.5%) !important;
+    }
+    .astra-system.active h2 {
+        transform: translateY(80%);
+    }
+    .astra-cube.show {
+        transform: translateX(-18vw);
+    }
+    .astra-system:not(.active):hover .astra-cube:not(.show) {
+        transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateY(100%) !important;
+    }
+    .astra-system:not(.active) .astra-cube:not(.show) {
+        transform: rotateY(226deg) rotateX(10deg) rotateZ(10deg) translateY(180%) !important;
+    }
 }

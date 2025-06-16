@@ -2,15 +2,15 @@ import {getCosmicWeatherData} from "../services/nasa.js";
 
 export function cosmicWeatherPage(app) {
     app.innerHTML = `
-    <h2>Это проект о космосе</h2>
+    <h2>Find information about cosmic events</h2>
     <hr>
     <div class="inputDiv">
         <input id="startDate" placeholder="Start Date"><input id="endDate" placeholder="End Date">
         <select id="selectType">
-            <option value="CME">CME</option>
+            <option value="CME">Coronal Mass Ejection</option>
             <option value="GST">Geomagnetic Storm</option>
         </select>
-        <button id="showWeather">Найти</button>
+        <button id="showWeather">Search</button>
     </div>
 
     <div id="result"> </div> `
@@ -37,7 +37,7 @@ export function cosmicWeatherPage(app) {
         const end = endDate.value;
 
         if (!start || !end) {
-            result.innerHTML = "Укажите даты";
+            result.innerHTML = "<h2>Please, input dates</h2>";
             return;
         }
 
@@ -53,7 +53,7 @@ export function cosmicWeatherPage(app) {
             });
 
             if (!filtered.length) {
-                result.innerHTML = "Ничего не найдено за тот период";
+                result.innerHTML = "<h2>Nothing found for this period</h2>";
                 return;
             }
 
@@ -62,28 +62,28 @@ export function cosmicWeatherPage(app) {
                     case "CME":
                         return `
                             <div class="event">
-                                <h3>Начало ${el.activityID}</h3>
-                                <h3>Инструменты ${el.catalog} </h3>
-                                <h3>Стартовое время ${el.startTime} </h3>
-                                <h3>Время: ${el.cmeAnalyses?.[0]?.time21_5 || ''}</h3>
-                                <h3>Скорость ${el.cmeAnalyses?.[0]?.speed || ''}</h3>
-                                <h3 class="text_js">Примечание ${el.note || ''}</h3>
+                                <h3>ID: ${el.activityID}</h3>
+                                <h3>Discovered with: ${el.catalog} </h3>
+                                <h3>Started in: ${el.startTime} </h3>
+                                <h3>Ended in: ${el.cmeAnalyses?.[0]?.time21_5 || ''}</h3>
+                                <h3>Speed: ${el.cmeAnalyses?.[0]?.speed || ''}</h3>
+                                <h3 class="text_js">Description: ${el.note || ''}</h3>
                             </div>`;
                     case "GST":
                         return `
                             <div class="event">
-                                <h3>Начало ${el.gstID}</h3>
-                                <h3>Стартовое время ${el.startTime}</h3>
-                                <h3>Наблюдное время ${el.allKpIndex?.[0]?.observedTime || ''}</h3>
-                                <h3>Кп индекс ${el.allKpIndex?.[0]?.kpIndex || ''}</h3>
-                                <h3>Источник ${el.allKpIndex?.[0]?.source || ''}</h3>
+                                <h3>ID: ${el.gstID}</h3>
+                                <h3>Started in: ${el.startTime}</h3>
+                                <h3>Observed time: ${el.allKpIndex?.[0]?.observedTime || ''}</h3>
+                                <h3>KP Index: ${el.allKpIndex?.[0]?.kpIndex || ''}</h3>
+                                <h3>Source: ${el.allKpIndex?.[0]?.source || ''}</h3>
                             </div>`;
                 }
             }).join("");
         }
-        
+
         catch (error) {
-            result.innerHTML = `Произошла ошибка ${error}`;
+            result.innerHTML = `An error occurred ${error}`;
         }
     });
 }
