@@ -20,7 +20,7 @@ Single-page app displaying real NASA space data. Built with vanilla JavaScript a
   - Preloaded CSV: `confirmed_planets.csv` (4,000+ exoplanets)
 - **CSS:** 3D transforms, animations, responsive design
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Nasa/
