@@ -7,5 +7,4 @@ export function homePage(app) {
     <p>To start researching, select an article from the navigation menu</p>
     </div>
     `
-
 }
